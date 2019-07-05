@@ -1,7 +1,7 @@
-id: sample-stack-id # must be unique
-name: sample stack # one liner description short meaningful name for the stack
+id: quarkus-stack # must be unique
+name: Quarkus Stack # one liner description short meaningful name for the stack
 version: 0.1.0 # version of the stack
-description: sample stack to help creation of more appsody stacks # free form text explaining more about the capabilities of this stack and various templates
-maintainer: Neeraj Laad <neeraj.laad@gmail.com> # comma separated list for more than one maintainer
-default-template: hello # name of default template
-license: Apache-2.0 # license for the stack
+description: A stack containing the Quarkus runtime
+maintainer: Paul Robinson <probinso@redhat.com>
+default-template: hello
+license: Apache-2.0

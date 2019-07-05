@@ -1,3 +1,32 @@
 # Dockerfile for building the stack
+FROM quay.io/quarkus/centos-quarkus-maven:19.0.2
 
-# Explain all the Appsody stack environment variables
+ENV APPSODY_MOUNTS=/:/project/user-app
+ENV APPSODY_DEPS=/project/user-app/node_modules
+
+ENV APPSODY_WATCH_DIR=/project/user-app
+#ENV APPSODY_WATCH_IGNORE_DIR=/project/user-app/node_modules
+ENV APPSODY_WATCH_REGEX="^.*.java$"
+
+#ENV APPSODY_INSTALL="npm install"
+
+ENV APPSODY_RUN="./mvnw compile quarkus:dev"
+ENV APPSODY_RUN_ON_CHANGE="./mvnw compile quarkus:dev"
+ENV APPSODY_RUN_KILL=true
+
+ENV APPSODY_DEBUG="./mvnw -Ddebug compile quarkus:dev"
+ENV APPSODY_DEBUG_ON_CHANGE="./mvnw -Ddebug compile quarkus:dev"
+ENV APPSODY_DEBUG_KILL=true
+
+ENV APPSODY_TEST="./mvnw test"
+ENV APPSODY_TEST_ON_CHANGE=""
+ENV APPSODY_TEST_KILL=false
+
+COPY ./project /project
+WORKDIR /project/user-app
+
+ENV PORT=8080
+
+EXPOSE 8080
+EXPOSE 5005
+
