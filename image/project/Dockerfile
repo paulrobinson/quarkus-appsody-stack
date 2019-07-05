@@ -4,9 +4,12 @@ FROM quay.io/quarkus/centos-quarkus-maven:19.0.2 AS build
 
 # Install user-app dependencies
 WORKDIR "/project/user-app"
-COPY ./user-app/* ./
+COPY ./user-app/src ./src
+COPY ./user-app/pom.xml ./
 USER root
-RUN chown -R quarkus /user-app
+RUN chown -R quarkus .
+RUN yum install -y tree
+RUN tree
 USER quarkus
 RUN mvn -Pnative clean package
 
