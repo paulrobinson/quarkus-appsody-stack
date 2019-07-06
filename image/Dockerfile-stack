@@ -6,17 +6,17 @@ ENV APPSODY_DEPS=/project/user-app/node_modules
 
 ENV APPSODY_WATCH_DIR=/project/user-app
 #ENV APPSODY_WATCH_IGNORE_DIR=/project/user-app/node_modules
-ENV APPSODY_WATCH_REGEX="^.*.java$"
+#ENV APPSODY_WATCH_REGEX="^.*.java$"
 
 #ENV APPSODY_INSTALL="npm install"
 
 ENV APPSODY_RUN="./mvnw compile quarkus:dev"
-ENV APPSODY_RUN_ON_CHANGE="./mvnw compile quarkus:dev"
-ENV APPSODY_RUN_KILL=true
+ENV APPSODY_RUN_ON_CHANGE=""
+ENV APPSODY_RUN_KILL=false
 
 ENV APPSODY_DEBUG="./mvnw -Ddebug compile quarkus:dev"
-ENV APPSODY_DEBUG_ON_CHANGE="./mvnw -Ddebug compile quarkus:dev"
-ENV APPSODY_DEBUG_KILL=true
+ENV APPSODY_DEBUG_ON_CHANGE=""
+ENV APPSODY_DEBUG_KILL=false
 
 ENV APPSODY_TEST="./mvnw test"
 ENV APPSODY_TEST_ON_CHANGE=""
