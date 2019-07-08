@@ -1,8 +1,6 @@
 # Dockerfile for building the stack
 FROM quay.io/quarkus/centos-quarkus-maven:19.0.2
 
-
-
 USER root
 RUN mkdir -p /mvn/repository
 
