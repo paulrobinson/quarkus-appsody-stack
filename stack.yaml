@@ -3,5 +3,5 @@ name: Quarkus Stack # one liner description short meaningful name for the stack
 version: 0.1.0 # version of the stack
 description: A stack containing the Quarkus runtime
 maintainer: Paul Robinson <probinso@redhat.com>
-default-template: hello
+default-template: default
 license: Apache-2.0
